@@ -95,7 +95,7 @@ public class Part01CreateFlux {
 
 	// TODO Create a Flux that never terminates
 	Flux<String> neverTerminatedFlux() {
-		return null;
+		return Flux.from( p->p.onNext("infinite!"));
 	}
 
 //========================================================================================
