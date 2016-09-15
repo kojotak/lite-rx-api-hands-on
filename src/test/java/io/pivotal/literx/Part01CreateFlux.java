@@ -24,9 +24,8 @@ public class Part01CreateFlux {
 				.assertComplete();
 	}
 
-	// TODO Return an empty Flux
 	Flux<String> emptyFlux() {
-		return null;
+		return Flux.from( s-> s.onComplete() );
 	}
 
 //========================================================================================
