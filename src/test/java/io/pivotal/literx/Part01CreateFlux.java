@@ -1,5 +1,7 @@
 package io.pivotal.literx;
 
+import java.time.Duration;
+
 import org.junit.Test;
 import org.reactivestreams.Publisher;
 
@@ -111,7 +113,7 @@ public class Part01CreateFlux {
 
 	// TODO Create a Flux that emits an increasing value each 100ms
 	Flux<Long> counter() {
-		return null;
+		return Flux.interval(Duration.ofMillis(100));
 	}
 
 }
