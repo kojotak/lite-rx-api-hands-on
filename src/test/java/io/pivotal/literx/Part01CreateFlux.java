@@ -1,6 +1,8 @@
 package io.pivotal.literx;
 
 import org.junit.Test;
+import org.reactivestreams.Publisher;
+
 import reactor.core.publisher.Flux;
 import io.pivotal.literx.test.TestSubscriber;
 
@@ -41,7 +43,11 @@ public class Part01CreateFlux {
 
 	// TODO Return a Flux that contains 2 values "foo" and "bar" without using an array or a collection
 	Flux<String> fooBarFluxFromValues() {
-		return null;
+		return Flux.from( p -> { 
+			p.onNext("foo"); 
+			p.onNext("bar"); 
+			p.onComplete(); }  
+		);
 	}
 
 //========================================================================================
